@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BLUE4YOU</title>
+<meta name="description" content="BLUE4YOU - บริการครบ จบในที่เดียว">
+
+<style>
+*{
+    box-sizing:border-box;
+}
+html,body{
+    margin:0;
+    min-height:100%;
+    font-family:Tahoma,Arial,sans-serif;
+    background:#05080d;
+    color:#fff;
+}
+body{
+    display:flex;
+    justify-content:center;
+}
+.page{
+    width:100%;
+    max-width:430px;
+    min-height:100vh;
+    padding:22px 15px 30px;
+    background:
+    radial-gradient(circle at 50% 0,rgba(0,170,255,.22),transparent 32%),
+    linear-gradient(180deg,#061525,#02070c 70%,#010305);
+}
+
+.logo{
+    font-size:34px;
+    font-weight:900;
+    text-align:center;
+    letter-spacing:1px;
+    margin:12px 0 5px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#b9d9ef;
+    font-size:15px;
+    margin-bottom:24px;
+}
+  .badge{
+    margin:0 auto 18px;
+    width:max-content;
+    padding:8px 18px;
+    border:1px solid #39b9ff;
+    border-radius:30px;
+    background:rgba(0,130,255,.12);
+    font-weight:700;
+}
+
+.card{
+    border:1px solid rgba(74,190,255,.65);
+    border-radius:18px;
+    background:linear-gradient(180deg,rgba(8,30,48,.96),rgba(2,10,18,.98));
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
+    padding:18px;
+    margin-bottom:16px;
+}
+
+.card h2{
+    font-size:17px;
+    margin:0 0 12px;
+}
+
+.big{
+    font-size:28px;
+    font-weight:900;
+}
+
+.muted{
+    color:#a8c4d7;
+    font-size:13px;
+    margin-top:5px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+.stat{
+    padding:15px 12px;
+    border-radius:14px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.online{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:800;
+}
+
+.dot{
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:#20f56b;
+    box-shadow:0 0 12px #20f56b;
+}
+
+.live{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:7px;
+    background:#e83232;
+    font-size:11px;
+    font-weight:900;
+    margin-bottom:8px;
+}
+
+.withdraw{
+    display:flex;
+    justify-content:space-between;
+    padding:11px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    font-size:14px;
+}
+
+.withdraw:last-child{
+    border-bottom:0;
+}
+
+.btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    padding:15px;
+    border-radius:14px;
+    font-weight:900;
+    margin-top:10px;
+}
+
+.login{
+    background:linear-gradient(180deg,#48b9ff,#0877df);
+    color:#fff;
+}
+
+.admin{
+    background:linear-gradient(180deg,#28df68,#079c40);
+    color:#fff;
+}
+
+.footer{
+    text-align:center;
+    color:#8ba5b7;
+    font-size:12px;
+    margin-top:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<main class="page">
+
+<div class="logo">BLUE4YOU</div>
+
+<div class="subtitle">
+เว็บตรง ลิขสิทธิ์แท้<br>
+บริการครบ จบในที่เดียว
+</div>
+
+<div class="badge">
+🕐 บริการ 24 ชั่วโมง
+</div>  
+<section class="card">
+  <div class="grid">
+
+    <div class="stat">
+      <div class="muted">จำนวนผู้ใช้งาน</div>
+      <div class="big" id="users">925,919</div>
+    </div>
+
+    <div class="stat">
+      <div class="online">
+        <span class="dot"></span>
+        ผู้ใช้ออนไลน์
+      </div>
+      <div class="muted">
+        กำลังใช้งานอยู่ตอนนี้
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="card">
+  <span class="live">LIVE</span>
+
+  <h2>ยอดโบนัสสะสม</h2>
+
+  <div class="big" id="bonus">
+    7,412,054.00 ฿
+  </div>
+
+  <div class="muted">
+    อัปเดตอัตโนมัติ • จ่ายจริงทุกวินาที
+  </div>
+</section>
+
+<section class="card">
+
+<h2>รายการถอนล่าสุด</h2>
+
+<div class="muted">
+AUTO SYSTEM • อัปเดตต่อเนื่อง
+</div>
+
+<div id="withdrawals">
+
+<div class="withdraw">
+<span>สมาชิก</span>
+<b>+0 ฿</b>
+</div>
+
+<div class="withdraw">
+<span>สมาชิก</span>
+<b>+0 ฿</b>
+</div>
+
+<div class="withdraw">
+<span>สมาชิก</span>
+<b>+0 ฿</b>
+</div>
+
+</div>
+
+</section>
+
+<a class="btn login"
+href="https://blue4you.zzttyy.com/customer/regi/ka"
+target="_blank">
+สมัครสมาชิก
+</a>
+
+<a class="btn admin"
+href="https://lin.ee/5WrfDvQ"
+target="_blank">
+ติดต่อเรา
+</a>
+
+<div class="footer">
+รองรับการใช้งานทุกระบบ
+</div>
+
+</main>
+<script>
+(function(){
+
+let bonus = 7412054;
+let users = 925919;
+
+function money(n){
+    return n.toLocaleString('th-TH',{
+        minimumFractionDigits:2,
+        maximumFractionDigits:2
+    }) + ' ฿';
+}
+
+setInterval(function(){
+
+    bonus += Math.random()*4;
+
+    document.getElementById("bonus").textContent =
+        money(bonus);
+
+    users += (Math.random()>0.5 ? 1 : -1);
+
+    if(users < 925000){
+        users = 925000;
+    }
+
+    document.getElementById("users").textContent =
+        users.toLocaleString("th-TH");
+
+},1000);
+
+function updateWithdraw(){
+
+    const list = document.querySelectorAll(
+        "#withdrawals .withdraw b"
+    );
+
+    list.forEach(function(item){
+
+        let amount =
+            Math.floor(
+                100 + Math.random()*4900
+            );
+
+        item.textContent =
+            "+" +
+            amount.toLocaleString("th-TH") +
+            " ฿";
+
+    });
+
+}
+
+updateWithdraw();
+
+setInterval(updateWithdraw,3000);
+
+})();
+</script>
+
+</body>
+</html>  
