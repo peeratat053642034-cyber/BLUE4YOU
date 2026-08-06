@@ -153,6 +153,7 @@ body{
         opacity:.5;
         transform:scale(.75);
     }
+}
 
 /* LIVE */
 .live{
@@ -330,7 +331,7 @@ background:linear-gradient(90deg,#00a83b,#20d957);
             </div>
 
             <div class="big" id="users">
-                925,919
+                1,925,919
             </div>
         </div>
 
@@ -363,7 +364,7 @@ background:linear-gradient(90deg,#00a83b,#20d957);
     </h2>
 
     <div class="big" id="bonus">
-        7,412,054.00 ฿
+        77,412,054.00 ฿
     </div>
 
     <div class="muted">
@@ -415,8 +416,8 @@ background:linear-gradient(90deg,#00a83b,#20d957);
 </main><script>
 (function(){
 
-    let bonus = 7412054;
-    let users = 925919;
+    let bonus = 77412054;
+    let users = 1925919;
 
     function money(n){
 
@@ -438,8 +439,8 @@ background:linear-gradient(90deg,#00a83b,#20d957);
 
         users += Math.random() > 0.5 ? 1 : -1;
 
-        if(users < 925000){
-            users = 925000;
+        if(users < 1925000){
+            users = 1925000;
         }
 
         document.getElementById("users").textContent =
@@ -577,6 +578,11 @@ function addDemoTransaction(){
         box.removeChild(
             box.lastElementChild
         );
+
+    }
+
+}
+
 
 addDemoTransaction();
 
