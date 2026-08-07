@@ -71,8 +71,27 @@ body{
     display:block;
     width:100%;
     height:auto;
-    
+
+ .banner-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    width:100%;
+    margin:0 auto 18px;
 }
+
+.banner-grid .banner-item{
+    width:100%;
+    margin:0;
+    border-radius:14px;
+}
+
+.banner-grid .banner-item img{
+    width:100%;
+    aspect-ratio:1 / 1;
+    object-fit:cover;
+}
+    
 .subtitle{
     text-align:center;
     color:#b9d9ef;
@@ -325,6 +344,26 @@ background:linear-gradient(90deg,#00a83b,#20d957);
     <div class="banner-item">
         <img src="logo.jpg (2).jpg" alt="BLUE4YOU">
     </div>
+
+    <div class="banner-grid">
+
+    <div class="banner-item">
+        <img src="256021_0.jpg" alt="BLUE4YOU">
+    </div>
+
+    <div class="banner-item">
+        <img src="256022_0.jpg" alt="BLUE4YOU">
+    </div>
+
+    <div class="banner-item">
+        <img src="42go_9.jpg" alt="BLUE4YOU">
+    </div>
+
+    <div class="banner-item">
+        <img src="aff12_9.jpg" alt="BLUE4YOU">
+    </div>
+
+</div>
 
 <div class="subtitle">
     บริการครบ จบในที่เดียว
