@@ -310,6 +310,173 @@ background:linear-gradient(90deg,#00a83b,#20d957);
     font-size:12px;
     margin-top:22px;
 }
+    /* =====================================================
+   BLUE NEON PARTICLE / LIGHT EFFECT
+   ===================================================== */
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ชั้นเอฟเฟกต์เต็มหน้าจอ */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(0,180,255,.20), transparent 25%),
+        radial-gradient(circle at 85% 75%, rgba(0,120,255,.18), transparent 28%),
+        linear-gradient(135deg, #020912, #031525, #01060c);
+
+    animation: neonBackground 12s ease-in-out infinite alternate;
+}
+
+/* อนุภาค */
+body::after {
+    content: "";
+    position: fixed;
+    inset: -100px;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(circle, rgba(0,200,255,.9) 0 1px, transparent 2px),
+        radial-gradient(circle, rgba(0,150,255,.7) 0 1px, transparent 2px),
+        radial-gradient(circle, rgba(70,220,255,.8) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle, rgba(0,180,255,.6) 0 1px, transparent 2px);
+
+    background-size:
+        90px 90px,
+        140px 140px,
+        210px 210px,
+        170px 170px;
+
+    background-position:
+        0 0,
+        40px 80px,
+        100px 20px,
+        20px 130px;
+
+    animation: particlesMove 16s linear infinite;
+}
+
+/* แสงพื้นหลังเคลื่อนไหว */
+@keyframes neonBackground {
+    0% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+        filter: brightness(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+/* อนุภาควิ่ง */
+@keyframes particlesMove {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: translate3d(-40px, -80px, 0);
+    }
+
+    50% {
+        transform: translate3d(60px, -150px, 0);
+    }
+
+    75% {
+        transform: translate3d(-80px, -230px, 0);
+    }
+
+    100% {
+        transform: translate3d(0, -320px, 0);
+    }
+}
+
+/* เส้นแสงแนวทแยง */
+.page {
+    position: relative;
+    overflow: hidden;
+}
+
+.page::after {
+    content: "";
+    position: fixed;
+    width: 180%;
+    height: 2px;
+    left: -40%;
+    top: 25%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0,180,255,0),
+        rgba(0,200,255,.9),
+        rgba(80,230,255,.7),
+        rgba(0,160,255,0),
+        transparent
+    );
+
+    box-shadow:
+        0 0 8px rgba(0,190,255,.8),
+        0 0 20px rgba(0,150,255,.6),
+        0 0 40px rgba(0,120,255,.4);
+
+    transform: rotate(-12deg);
+    pointer-events: none;
+    z-index: 0;
+
+    animation: lightLine 6s linear infinite;
+}
+
+/* เส้นแสงวิ่งผ่านหน้าจอ */
+@keyframes lightLine {
+    0% {
+        transform:
+            translateX(-60%)
+            translateY(350px)
+            rotate(-12deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: .8;
+    }
+
+    100% {
+        transform:
+            translateX(80%)
+            translateY(-350px)
+            rotate(-12deg);
+        opacity: 0;
+    }
+}
+
+/* ทำให้เนื้อหาอยู่ด้านหน้าเอฟเฟกต์ */
+.page > * {
+    position: relative;
+    z-index: 1;
+}
 </style></head><body><main class="page"><div class="logo">
     <img src="11_0.png" alt="BLUE4YOU">
 </div>
