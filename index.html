@@ -73,7 +73,7 @@ body{
     height:auto;
 }
 
-/* 2 x 2 IMAGE GRID */
+/* 2 x 2 */
 .banner-grid{
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
@@ -90,7 +90,6 @@ body{
 .banner-grid .banner-item img{
     display:block;
     width:100%;
-    height:auto;
     aspect-ratio:1 / 1;
     object-fit:cover;
 }
@@ -149,7 +148,7 @@ body{
 
 /* NUMBERS */
 .big{
-    font-size:28px;
+    font-size:27px;
     font-weight:900;
     margin-top:4px;
 }
@@ -183,7 +182,6 @@ body{
         opacity:1;
         transform:scale(1);
     }
-
     50%{
         opacity:.5;
         transform:scale(.75);
@@ -202,11 +200,10 @@ body{
     box-shadow:0 0 12px rgba(255,23,68,.5);
 }
 
-/* WITHDRAW / RECENT */
+/* LIST */
 .withdraw{
     padding:13px 0;
     border-bottom:1px solid rgba(255,255,255,.08);
-    animation:slideIn .35s ease;
 }
 
 .withdraw:last-child{
@@ -268,18 +265,6 @@ body{
     color:#35ff8a;
 }
 
-@keyframes slideIn{
-    from{
-        opacity:0;
-        transform:translateY(-12px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
 /* BUTTON */
 .btn{
     display:block;
@@ -291,11 +276,6 @@ body{
     text-decoration:none;
     font-size:17px;
     font-weight:900;
-    transition:.2s;
-}
-
-.btn:active{
-    transform:scale(.97);
 }
 
 .login{
@@ -319,51 +299,15 @@ body{
     margin-top:22px;
     line-height:1.8;
 }
-
-/* DEMO LABEL */
-.demo-label{
-    display:inline-block;
-    margin-top:10px;
-    padding:4px 9px;
-    border-radius:10px;
-    border:1px solid rgba(255,255,255,.12);
-    color:#7893a5;
-    font-size:10px;
-}
-
-/* MOBILE */
-@media(max-width:360px){
-
-    .page{
-        padding-left:10px;
-        padding-right:10px;
-    }
-
-    .logo img{
-        width:180px;
-    }
-
-    .big{
-        font-size:24px;
-    }
-
-    .banner-grid{
-        gap:7px;
-    }
-
-    .card{
-        padding:15px;
-    }
-}
 </style></head><body><main class="page"><!-- LOGO --><div class="logo">
     <img src="11_0.png" alt="BLUE4YOU">
 </div><div class="logo-text">
     BLUE4YOU สะดวก • รวดเร็ว • พร้อมให้บริการ
-</div><!-- MAIN BANNERS --><div class="banner-item">
+</div><!-- BANNERS --><div class="banner-item">
     <img src="logo.jpg.jpg" alt="BLUE4YOU">
 </div><div class="banner-item">
     <img src="logo.jpg (2).jpg" alt="BLUE4YOU">
-</div><!-- 2 x 2 BANNERS --><div class="banner-grid"><div class="banner-item">
+</div><div class="banner-grid"><div class="banner-item">
     <img src="256021_0.jpg" alt="BLUE4YOU">
 </div>
 
@@ -392,7 +336,7 @@ body{
         </div>
 
         <div class="big" id="users">
-            3,200
+            2,480
         </div>
 
         <div class="muted">
@@ -405,13 +349,8 @@ body{
     <div class="stat">
 
         <div class="online">
-
             <span class="dot"></span>
-
-            <span id="online">
-                245
-            </span>
-
+            <span id="online">186</span>
         </div>
 
         <div class="muted">
@@ -431,11 +370,11 @@ body{
 </h2>
 
 <div class="big" id="bonus">
-    185,000.00 ฿
+    128,450.00 ฿
 </div>
 
 <div class="muted">
-    ยอดตัวอย่างสำหรับหน้าเดโม
+    ยอดสะสมประจำระบบ
 </div>
 
 </section><!-- RECENT --><section class="card"><h2>
@@ -446,110 +385,106 @@ body{
     รายการตัวอย่าง • อัปเดตล่าสุด
 </div>
 
+<div id="withdrawals">
 
-<div class="withdraw">
+    <div class="withdraw">
 
-    <div class="withdraw-top">
+        <div class="withdraw-top">
 
-        <div class="member-info">
+            <div class="member-info">
 
-            <span class="bank-icon">
-                ฿
-            </span>
+                <span class="bank-icon">
+                    ฿
+                </span>
 
-            <span class="withdraw-phone">
-                สมาชิก 08X-XXX-4821
-            </span>
+                <span class="withdraw-phone">
+                    สมาชิก 08X-XXX-4821
+                </span>
 
-        </div>
+            </div>
 
-        <span class="withdraw-amount">
-            1,250 ฿
-        </span>
-
-    </div>
-
-    <div class="withdraw-time">
-        วันนี้ • 10:42 น.
-    </div>
-
-    <div class="withdraw-status status-success">
-        ✓ รายการตัวอย่าง
-    </div>
-
-</div>
-
-
-<div class="withdraw">
-
-    <div class="withdraw-top">
-
-        <div class="member-info">
-
-            <span class="bank-icon">
-                ฿
-            </span>
-
-            <span class="withdraw-phone">
-                สมาชิก 09X-XXX-7315
+            <span class="withdraw-amount">
+                1,250 ฿
             </span>
 
         </div>
 
-        <span class="withdraw-amount">
-            980 ฿
-        </span>
+        <div class="withdraw-time">
+            วันนี้ • 10:42 น.
+        </div>
+
+        <div class="withdraw-status status-success">
+            ✓ รายการตัวอย่าง
+        </div>
 
     </div>
 
-    <div class="withdraw-time">
-        วันนี้ • 10:18 น.
-    </div>
 
-    <div class="withdraw-status status-success">
-        ✓ รายการตัวอย่าง
-    </div>
+    <div class="withdraw">
 
-</div>
+        <div class="withdraw-top">
 
+            <div class="member-info">
 
-<div class="withdraw">
+                <span class="bank-icon">
+                    ฿
+                </span>
 
-    <div class="withdraw-top">
+                <span class="withdraw-phone">
+                    สมาชิก 09X-XXX-7315
+                </span>
 
-        <div class="member-info">
+            </div>
 
-            <span class="bank-icon">
-                ฿
-            </span>
-
-            <span class="withdraw-phone">
-                สมาชิก 06X-XXX-2648
+            <span class="withdraw-amount">
+                980 ฿
             </span>
 
         </div>
 
-        <span class="withdraw-amount">
-            2,450 ฿
-        </span>
+        <div class="withdraw-time">
+            วันนี้ • 10:18 น.
+        </div>
+
+        <div class="withdraw-status status-success">
+            ✓ รายการตัวอย่าง
+        </div>
 
     </div>
 
-    <div class="withdraw-time">
-        วันนี้ • 09:56 น.
+
+    <div class="withdraw">
+
+        <div class="withdraw-top">
+
+            <div class="member-info">
+
+                <span class="bank-icon">
+                    ฿
+                </span>
+
+                <span class="withdraw-phone">
+                    สมาชิก 06X-XXX-2648
+                </span>
+
+            </div>
+
+            <span class="withdraw-amount">
+                2,450 ฿
+            </span>
+
+        </div>
+
+        <div class="withdraw-time">
+            วันนี้ • 09:56 น.
+        </div>
+
+        <div class="withdraw-status status-success">
+            ✓ รายการตัวอย่าง
+        </div>
+
     </div>
 
-    <div class="withdraw-status status-success">
-        ✓ รายการตัวอย่าง
-    </div>
-
-</div>
-
-
-<div style="text-align:center;">
-    <span class="demo-label">
-        ข้อมูลตัวอย่าง
-    </span>
 </div>
 
 </section><!-- BUTTONS --><a
@@ -572,42 +507,8 @@ rel="noopener"
 
 ติดต่อเรา
 
-</a><div class="footer">BLUE4YOU<br>
-
-รองรับการใช้งานทุกระบบ
-
-</div></main><script>
-
-(function(){
-
-    /* BUTTON EFFECT */
-
-    const buttons =
-        document.querySelectorAll(".btn");
-
-    buttons.forEach(function(button){
-
-        button.addEventListener("click",function(){
-
-            button.style.transform =
-                "scale(.97)";
-
-            setTimeout(function(){
-
-                button.style.transform = "";
-
-            },150);
-
-        });
-
-    });
-
-
-    /* DEMO NUMBERS */
-
-    let users = 3200;
-    let online = 245;
-    let bonus = 185000;
-
-
-    function upd
+</a><div class="footer">
+    BLUE4YOU<br>
+    รองรับการใช้งานทุกระบบ
+</div></main></body>
+</html>
