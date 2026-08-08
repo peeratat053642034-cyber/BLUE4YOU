@@ -302,56 +302,6 @@ background:linear-gradient(90deg,#00a83b,#20d957);
         transform:translateY(0);
     }
 
-/* ===== PARTICLES ===== */
-
-.page{
-    position:relative;
-    overflow:hidden;
-    isolation:isolate;
-}
-
-.particle{
-    position:absolute;
-    width:3px;
-    height:3px;
-    border-radius:50%;
-    background:#45c9ff;
-    box-shadow:0 0 8px #00bfff;
-    pointer-events:none;
-    z-index:0;
-    animation:floatParticle linear infinite;
-}
-
-.page > *:not(.particle){
-    position:relative;
-    z-index:1;
-}
-
-@keyframes floatParticle{
-
-    0%{
-        transform:translate3d(0,110vh,0) scale(.5);
-        opacity:0;
-    }
-
-    10%{
-        opacity:.8;
-    }
-
-    50%{
-        transform:translate3d(30px,50vh,0) scale(1);
-        opacity:1;
-    }
-
-    90%{
-        opacity:.7;
-    }
-
-    100%{
-        transform:translate3d(-30px,-10vh,0) scale(.5);
-        opacity:0;
-    }
-
 /* FOOTER */
 .footer{
     text-align:center;
@@ -359,6 +309,69 @@ background:linear-gradient(90deg,#00a83b,#20d957);
     font-size:12px;
     margin-top:22px;
 }
+
+/* ===== พื้นหลังดาวเคลื่อนไหว ===== */
+
+.page{
+    position:relative;
+    overflow:hidden;
+}
+
+.page::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+
+    background-image:
+        radial-gradient(circle, rgba(80,210,255,.9) 1px, transparent 2px),
+        radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 2px),
+        radial-gradient(circle, rgba(0,160,255,.7) 1.5px, transparent 2.5px);
+
+    background-size:
+        90px 90px,
+        140px 140px,
+        190px 190px;
+
+    background-position:
+        0 0,
+        40px 70px,
+        80px 20px;
+
+    animation:starsMove 12s linear infinite;
+}
+
+.page > *{
+    position:relative;
+    z-index:1;
+}
+
+@keyframes starsMove{
+
+    0%{
+        background-position:
+            0 0,
+            40px 70px,
+            80px 20px;
+    }
+
+    50%{
+        background-position:
+            30px 60px,
+            0 20px,
+            -40px 80px;
+    }
+
+    100%{
+        background-position:
+            60px 120px,
+            -40px 40px,
+            -80px 160px;
+    }
+
+}
+    
 </style></head><body><main class="page"><div class="logo">
     <img src="11_0.png" alt="BLUE4YOU">
 </div>
@@ -654,41 +667,6 @@ setInterval(
     5000
 );
     
-/* ===== สร้างอนุภาคพื้นหลัง ===== */
-
-const page = document.querySelector(".page");
-
-for(let i = 0; i < 35; i++){
-
-    const particle =
-        document.createElement("span");
-
-    particle.className = "particle";
-
-    particle.style.left =
-        Math.random() * 100 + "%";
-
-    particle.style.animationDuration =
-        (7 + Math.random() * 10) + "s";
-
-    particle.style.animationDelay =
-        (-Math.random() * 15) + "s";
-
-    const size =
-        2 + Math.random() * 3;
-
-    particle.style.width =
-        size + "px";
-
-    particle.style.height =
-        size + "px";
-
-    page.appendChild(particle);
-}
-
-
-/* จบ JavaScript */
-
 })();
 </script></body>
 </html>
