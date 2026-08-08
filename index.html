@@ -41,8 +41,8 @@ body{
 
 .logo img{
     display:block;
-    width:200px;
-    max-width:85%;
+    width:160px;
+    max-width:75%;
     height:auto;
     margin:0 auto;
     filter:drop-shadow(0 0 12px rgba(0,180,255,.65));
@@ -71,29 +71,8 @@ body{
     display:block;
     width:100%;
     height:auto;
-}
     
- .banner-grid{
-    display:grid !important;
-    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
-    gap:8px !important;
-    width:90% !important;
-    margin:0 auto 18px !important;
 }
-
-.banner-grid .banner-item{
-    width:100% !important;
-    margin:0 !important;
-}
-
-.banner-grid .banner-item img{
-    display:block;
-    width:100% !important;
-    height:auto !important;
-    aspect-ratio:1 / 1;
-    object-fit:cover;
-}
-    
 .subtitle{
     text-align:center;
     color:#b9d9ef;
@@ -347,26 +326,6 @@ background:linear-gradient(90deg,#00a83b,#20d957);
         <img src="logo.jpg (2).jpg" alt="BLUE4YOU">
     </div>
 
-    <div class="banner-grid">
-
-    <div class="banner-item">
-        <img src="256021_0.jpg" alt="BLUE4YOU">
-    </div>
-
-    <div class="banner-item">
-        <img src="256022_0.jpg" alt="BLUE4YOU">
-    </div>
-
-    <div class="banner-item">
-        <img src="42go_9.jpg" alt="BLUE4YOU">
-    </div>
-
-    <div class="banner-item">
-        <img src="aff12_9.jpg" alt="BLUE4YOU">
-    </div>
-
-</div>
-
 <div class="subtitle">
     บริการครบ จบในที่เดียว
 </div>
@@ -587,4 +546,65 @@ function addDemoTransaction(){
 
             </div>
 
-            <span class="withdraw
+            <span class="withdraw-amount">
+                +${amount.toLocaleString("th-TH")} ฿
+            </span>
+
+        </div>
+
+        <div class="withdraw-time">
+            ${time}
+        </div>
+
+        <div class="withdraw-status status-wait">
+            รอทำรายการ
+        </div>
+    `;
+
+    box.prepend(item);
+
+
+    setTimeout(function(){
+
+        const status =
+            item.querySelector(".withdraw-status");
+
+        if(status){
+
+            status.textContent =
+                "สำเร็จ";
+
+            status.classList.remove(
+                "status-wait"
+            );
+
+            status.classList.add(
+                "status-success"
+            );
+
+        }
+
+    },3000);
+
+
+    while(box.children.length > 5){
+
+        box.removeChild(
+            box.lastElementChild
+        );
+
+    }
+
+}
+
+
+addDemoTransaction();
+
+setInterval(
+    addDemoTransaction,
+    5000
+);
+    
+})();
+</script></body>
+</html>
