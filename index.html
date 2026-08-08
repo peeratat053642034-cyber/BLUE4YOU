@@ -50,14 +50,14 @@ body{
 
 .logo-text{
     text-align:center;
-    color:#ffffff;
+    color:#fff;
     font-size:16px;
     font-weight:700;
     margin:5px 0 18px;
     text-shadow:0 0 10px rgba(0,180,255,.6);
 }
 
-    
+/* BANNER */
 .banner-item{
     width:95%;
     margin:0 auto 18px;
@@ -72,39 +72,42 @@ body{
     width:100%;
     height:auto;
 }
-    
- .banner-grid{
-    display:grid !important;
-    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
-    gap:8px !important;
-    width:90% !important;
-    margin:0 auto 18px !important;
+
+/* 2 x 2 IMAGE GRID */
+.banner-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+    width:94%;
+    margin:0 auto 18px;
 }
 
 .banner-grid .banner-item{
-    width:100% !important;
-    margin:0 !important;
+    width:100%;
+    margin:0;
 }
 
 .banner-grid .banner-item img{
     display:block;
-    width:100% !important;
-    height:auto !important;
+    width:100%;
+    height:auto;
     aspect-ratio:1 / 1;
     object-fit:cover;
 }
-    
+
+/* TEXT */
 .subtitle{
     text-align:center;
     color:#b9d9ef;
     font-size:15px;
-    margin-bottom:24px;
+    margin:6px 0 22px;
 }
 
 /* BADGE */
 .badge{
     margin:0 auto 18px;
     width:max-content;
+    max-width:100%;
     padding:8px 18px;
     border:1px solid #39b9ff;
     border-radius:30px;
@@ -180,6 +183,7 @@ body{
         opacity:1;
         transform:scale(1);
     }
+
     50%{
         opacity:.5;
         transform:scale(.75);
@@ -200,60 +204,13 @@ body{
 
 /* WITHDRAW */
 .withdraw{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:12px 0;
+    padding:13px 0;
     border-bottom:1px solid rgba(255,255,255,.08);
-    font-size:14px;
+    animation:slideIn .35s ease;
 }
 
 .withdraw:last-child{
     border-bottom:none;
-}
-
-.withdraw b{
-    color:#35ff8a;
-    font-size:16px;
-}
-
-/* BUTTON */
-.btn{
-    display:block;
-    width:100%;
-    padding:15px;
-    margin-top:12px;
-    border-radius:14px;
-    text-align:center;
-    text-decoration:none;
-    font-size:17px;
-    font-weight:900;
-    transition:.2s;
-}
-
-.btn:active{
-    transform:scale(.97);
-}
-
-.login{
-    color:#fff;
-    
-background:linear-gradient(90deg,#008cff,#00b7ff);
-    box-shadow:0 8px 25px rgba(0,150,255,.25);
-}
-
-.admin{
-    color:#fff;
-    
-background:linear-gradient(90deg,#00a83b,#20d957);
-    border:1px solid #35ff70;
-    box-shadow:0 8px 25px rgba(0,200,70,.25);
-}
-
-.withdraw{
-    padding:13px 0;
-    border-bottom:1px solid rgba(255,255,255,.08);
-    animation:slideIn .35s ease;
 }
 
 .withdraw-top{
@@ -267,6 +224,7 @@ background:linear-gradient(90deg,#00a83b,#20d957);
     display:flex;
     align-items:center;
     gap:8px;
+    min-width:0;
 }
 
 .bank-icon{
@@ -291,6 +249,7 @@ background:linear-gradient(90deg,#00a83b,#20d957);
     color:#35ff8a;
     font-size:15px;
     font-weight:900;
+    white-space:nowrap;
 }
 
 .withdraw-time{
@@ -305,10 +264,6 @@ background:linear-gradient(90deg,#00a83b,#20d957);
     font-weight:800;
 }
 
-.status-wait{
-    color:#ffd43b;
-}
-
 .status-success{
     color:#35ff8a;
 }
@@ -318,36 +273,72 @@ background:linear-gradient(90deg,#00a83b,#20d957);
         opacity:0;
         transform:translateY(-12px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
     }
 }
-    
+
+/* BUTTON */
+.btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    margin-top:12px;
+    border-radius:14px;
+    text-align:center;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:900;
+    transition:.2s;
+}
+
+.btn:active{
+    transform:scale(.97);
+}
+
+.login{
+    color:#fff;
+    background:linear-gradient(90deg,#008cff,#00b7ff);
+    box-shadow:0 8px 25px rgba(0,150,255,.25);
+}
+
+.admin{
+    color:#fff;
+    background:linear-gradient(90deg,#00a83b,#20d957);
+    border:1px solid #35ff70;
+    box-shadow:0 8px 25px rgba(0,200,70,.25);
+}
+
 /* FOOTER */
 .footer{
     text-align:center;
     color:#7893a5;
     font-size:12px;
     margin-top:22px;
+    line-height:1.8;
 }
-</style></head><body><main class="page"><div class="logo">
+</style></head><body><main class="page"><!-- LOGO -->
+<div class="logo">
     <img src="11_0.png" alt="BLUE4YOU">
 </div>
 
- <div class="logo-text">
+<div class="logo-text">
     BLUE4YOU สะดวก • รวดเร็ว • พร้อมให้บริการ
-</div>   
-    
+</div>
+
+<!-- MAIN BANNERS -->
 <div class="banner-item">
-        <img src="logo.jpg.jpg" alt="BLUE4YOU">
-    </div>
+    <img src="logo.jpg.jpg" alt="BLUE4YOU">
+</div>
 
-    <div class="banner-item">
-        <img src="logo.jpg (2).jpg" alt="BLUE4YOU">
-    </div>
+<div class="banner-item">
+    <img src="logo.jpg (2).jpg" alt="BLUE4YOU">
+</div>
 
-    <div class="banner-grid">
+<!-- 2 x 2 BANNERS -->
+<div class="banner-grid">
 
     <div class="banner-item">
         <img src="256021_0.jpg" alt="BLUE4YOU">
@@ -375,18 +366,22 @@ background:linear-gradient(90deg,#00a83b,#20d957);
     ● ระบบออนไลน์ตลอด 24 ชั่วโมง
 </div>
 
-<!-- USERS -->
+<!-- SERVICE STATUS -->
 <section class="card">
 
     <div class="grid">
 
         <div class="stat">
             <div class="muted">
-                จำนวนผู้ใช้งาน
+                สถานะระบบ
             </div>
 
-            <div class="big" id="users">
-                1,925,919
+            <div class="big">
+                พร้อมใช้งาน
+            </div>
+
+            <div class="muted">
+                ระบบออนไลน์
             </div>
         </div>
 
@@ -394,11 +389,11 @@ background:linear-gradient(90deg,#00a83b,#20d957);
 
             <div class="online">
                 <span class="dot"></span>
-                ผู้ใช้ออนไลน์
+                ออนไลน์
             </div>
 
             <div class="muted">
-                กำลังใช้งานอยู่ตอนนี้
+                พร้อมให้บริการ
             </div>
 
         </div>
@@ -407,7 +402,7 @@ background:linear-gradient(90deg,#00a83b,#20d957);
 
 </section>
 
-<!-- BONUS -->
+<!-- SERVICE INFO -->
 <section class="card">
 
     <span class="live">
@@ -415,31 +410,29 @@ background:linear-gradient(90deg,#00a83b,#20d957);
     </span>
 
     <h2>
-        ยอดโบนัสสะสม
+        บริการของเรา
     </h2>
 
-    <div class="big" id="bonus">
-        77,412,054.00 ฿
+    <div class="muted">
+        ระบบพร้อมให้บริการตลอด 24 ชั่วโมง
     </div>
 
     <div class="muted">
-        อัปเดตอัตโนมัติ
+        สามารถติดต่อทีมงานได้ผ่านช่องทางด้านล่าง
     </div>
 
 </section>
 
-<!-- WITHDRAW -->
+<!-- CONTACT -->
 <section class="card">
 
     <h2>
-        รายการล่าสุด
+        ติดต่อเรา
     </h2>
 
     <div class="muted">
-        AUTO SYSTEM • LIVE
-    </div>
-
-    <div id="withdrawals">
+        หากต้องการสอบถามข้อมูลเพิ่มเติม
+        สามารถติดต่อทีมงานได้โดยตรง
     </div>
 
 </section>
@@ -458,133 +451,37 @@ background:linear-gradient(90deg,#00a83b,#20d957);
 <a
     class="btn admin"
     href="https://lin.ee/5WrfDvQ"
-    target="_green"
+    target="_blank"
     rel="noopener"
 >
     ติดต่อเรา
 </a>
 
 <div class="footer">
+    BLUE4YOU<br>
     รองรับการใช้งานทุกระบบ
 </div>
 
 </main><script>
 (function(){
 
-    let bonus = 77412054;
-    let users = 1925919;
+    /* เพิ่มเอฟเฟกต์เล็กน้อยให้ปุ่ม */
+    const buttons = document.querySelectorAll(".btn");
 
-    function money(n){
+    buttons.forEach(function(button){
 
-        return n.toLocaleString('th-TH',{
-            minimumFractionDigits:2,
-            maximumFractionDigits:2
-        }) + ' ฿';
+        button.addEventListener("click",function(){
 
-    }
+            button.style.transform = "scale(.97)";
 
-    /* อัปเดตยอดและจำนวนผู้ใช้งาน */
-
-    setInterval(function(){
-
-        bonus += Math.random() * 4;
-
-        document.getElementById("bonus").textContent =
-            money(bonus);
-
-        users += Math.random() > 0.5 ? 1 : -1;
-
-        if(users < 1925000){
-            users = 1925000;
-        }
-
-        document.getElementById("users").textContent =
-            users.toLocaleString("th-TH");
-
-    },1000);
-
-
-    /* อัปเดตรายการถอน */
-
-    function updateWithdraw(){
-
-        const list = document.querySelectorAll(
-            "#withdrawals .withdraw b"
-        );
-
-        list.forEach(function(item){
-
-            const amount = Math.floor(
-                100 + Math.random() * 4900
-            );
-
-            item.textContent =
-                "+" +
-                amount.toLocaleString("th-TH") +
-                " ฿";
+            setTimeout(function(){
+                button.style.transform = "";
+            },150);
 
         });
 
-    }
+    });
 
-    updateWithdraw();
-
-    setInterval(updateWithdraw,3000);
-
-function randomMember(){
-
-    const prefixes = [
-        "08X-XXX-",
-        "09X-XXX-",
-        "06X-XXX-"
-    ];
-
-    const prefix =
-        prefixes[Math.floor(Math.random() * prefixes.length)];
-
-    const number =
-        Math.floor(1000 + Math.random() * 9000);
-
-    return "สมาชิก " + prefix + number;
-}
-
-function addDemoTransaction(){
-
-    const box =
-        document.getElementById("withdrawals");
-
-    const amount =
-        Math.floor(100 + Math.random() * 4900);
-
-    const now = new Date();
-
-    const time =
-        now.toLocaleDateString("th-TH") +
-        " • " +
-        now.toLocaleTimeString("th-TH",{
-            hour:"2-digit",
-            minute:"2-digit"
-        }) +
-        " น.";
-
-    const item =
-        document.createElement("div");
-
-    item.className = "withdraw";
-
-    item.innerHTML = `
-        <div class="withdraw-top">
-
-            <div class="member-info">
-
-                <span class="bank-icon">
-                    ฿
-                </span>
-
-                <span class="withdraw-phone">
-                    ${randomMember()}
-                </span>
-
-            </div>
-
-            <span class="withdraw
+})();
+</script></body>
+</html>
