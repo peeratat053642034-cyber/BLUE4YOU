@@ -302,6 +302,58 @@ background:linear-gradient(90deg,#00a83b,#20d957);
         transform:translateY(0);
     }
 }
+
+/* ===== PARTICLES ===== */
+
+.page{
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+}
+
+.particle{
+    position:absolute;
+    width:3px;
+    height:3px;
+    border-radius:50%;
+    background:#45c9ff;
+    box-shadow:0 0 8px #00bfff;
+    pointer-events:none;
+    z-index:0;
+    animation:floatParticle linear infinite;
+}
+
+.page > *:not(.particle){
+    position:relative;
+    z-index:1;
+}
+
+@keyframes floatParticle{
+
+    0%{
+        transform:translate3d(0,110vh,0) scale(.5);
+        opacity:0;
+    }
+
+    10%{
+        opacity:.8;
+    }
+
+    50%{
+        transform:translate3d(30px,50vh,0) scale(1);
+        opacity:1;
+    }
+
+    90%{
+        opacity:.7;
+    }
+
+    100%{
+        transform:translate3d(-30px,-10vh,0) scale(.5);
+        opacity:0;
+    }
+
+}
     
 /* FOOTER */
 .footer{
@@ -605,6 +657,43 @@ setInterval(
     5000
 );
     
+/* ===== สร้างอนุภาคพื้นหลัง ===== */
+
+const page = document.querySelector(".page");
+
+for(let i = 0; i < 35; i++){
+
+    const particle =
+        document.createElement("span");
+
+    particle.className = "particle";
+
+    particle.style.left =
+        Math.random() * 100 + "%";
+
+    particle.style.animationDuration =
+        (7 + Math.random() * 10) + "s";
+
+    particle.style.animationDelay =
+        (-Math.random() * 15) + "s";
+
+    const size =
+        2 + Math.random() * 3;
+
+    particle.style.width =
+        size + "px";
+
+    particle.style.height =
+        size + "px";
+
+    page.appendChild(particle);
+}
+
+
+/* จบ JavaScript */
+
 })();
-</script></body>
+</script>
+
+</body>
 </html>
