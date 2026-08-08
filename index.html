@@ -1,514 +1,558 @@
 <!doctype html>
 
-<html lang="th">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BLUE4YOU</title>
-<meta name="description" content="BLUE4YOU - บริการครบ จบในที่เดียว"><style>
-*{
-    box-sizing:border-box;
-}
-
-html,body{
-    margin:0;
-    min-height:100%;
-    font-family:Tahoma,Arial,sans-serif;
-    background:#05080d;
-    color:#fff;
+<html lang="th">  
+<head>  
+<meta charset="utf-8">  
+<meta name="viewport" content="width=device-width,initial-scale=1">  
+<title>BLUE4YOU</title>  
+<meta name="description" content="BLUE4YOU - บริการครบ จบในที่เดียว"><style>  
+*{  
+    box-sizing:border-box;  
+}  html,body{
+margin:0;
+min-height:100%;
+font-family:Tahoma,Arial,sans-serif;
+background:#05080d;
+color:#fff;
 }
 
 body{
-    display:flex;
-    justify-content:center;
+display:flex;
+justify-content:center;
 }
 
 .page{
-    width:100%;
-    max-width:430px;
-    min-height:100vh;
-    padding:22px 15px 30px;
-    background:
-    radial-gradient(circle at 50% 0,rgba(0,170,255,.22),transparent 32%),
-    linear-gradient(180deg,#061525,#02070c 70%,#010305);
+width:100%;
+max-width:430px;
+min-height:100vh;
+padding:22px 15px 30px;
+background:
+radial-gradient(circle at 50% 0,rgba(0,170,255,.22),transparent 32%),
+linear-gradient(180deg,#061525,#02070c 70%,#010305);
 }
 
 /* LOGO */
 .logo{
-    text-align:center;
-    margin:12px 0 10px;
+text-align:center;
+margin:12px 0 10px;
 }
 
 .logo img{
-    display:block;
-    width:200px;
-    max-width:85%;
-    height:auto;
-    margin:0 auto;
-    filter:drop-shadow(0 0 12px rgba(0,180,255,.65));
+display:block;
+width:200px;
+max-width:85%;
+height:auto;
+margin:0 auto;
+filter:drop-shadow(0 0 12px rgba(0,180,255,.65));
 }
 
 .logo-text{
-    text-align:center;
-    color:#fff;
-    font-size:16px;
-    font-weight:700;
-    margin:5px 0 18px;
-    text-shadow:0 0 10px rgba(0,180,255,.6);
+text-align:center;
+color:#ffffff;
+font-size:16px;
+font-weight:700;
+margin:5px 0 18px;
+text-shadow:0 0 10px rgba(0,180,255,.6);
 }
 
-/* BANNER */
 .banner-item{
-    width:95%;
-    margin:0 auto 18px;
-    overflow:hidden;
-    border-radius:18px;
-    border:1px solid rgba(74,190,255,.55);
-    box-shadow:0 8px 25px rgba(0,0,0,.4);
+width:95%;
+margin:0 auto 18px;
+overflow:hidden;
+border-radius:18px;
+border:1px solid rgba(74,190,255,.55);
+box-shadow:0 8px 25px rgba(0,0,0,.4);
 }
 
 .banner-item img{
-    display:block;
-    width:100%;
-    height:auto;
+display:block;
+width:100%;
+height:auto;
 }
 
-/* 2 x 2 */
 .banner-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:10px;
-    width:94%;
-    margin:0 auto 18px;
+display:grid !important;
+grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+gap:8px !important;
+width:90% !important;
+margin:0 auto 18px !important;
 }
 
 .banner-grid .banner-item{
-    width:100%;
-    margin:0;
+width:100% !important;
+margin:0 !important;
 }
 
 .banner-grid .banner-item img{
-    display:block;
-    width:100%;
-    aspect-ratio:1 / 1;
-    object-fit:cover;
+display:block;
+width:100% !important;
+height:auto !important;
+aspect-ratio:1 / 1;
+object-fit:cover;
 }
 
-/* TEXT */
 .subtitle{
-    text-align:center;
-    color:#b9d9ef;
-    font-size:15px;
-    margin:6px 0 22px;
+text-align:center;
+color:#b9d9ef;
+font-size:15px;
+margin-bottom:24px;
 }
 
 /* BADGE */
 .badge{
-    margin:0 auto 18px;
-    width:max-content;
-    max-width:100%;
-    padding:8px 18px;
-    border:1px solid #39b9ff;
-    border-radius:30px;
-    background:rgba(0,130,255,.12);
-    font-weight:700;
-    box-shadow:0 0 15px rgba(0,170,255,.15);
+margin:0 auto 18px;
+width:max-content;
+padding:8px 18px;
+border:1px solid #39b9ff;
+border-radius:30px;
+background:rgba(0,130,255,.12);
+font-weight:700;
+box-shadow:0 0 15px rgba(0,170,255,.15);
 }
 
 /* CARD */
 .card{
-    border:1px solid rgba(74,190,255,.65);
-    border-radius:18px;
-    background:
-    linear-gradient(
-        180deg,
-        rgba(8,30,48,.96),
-        rgba(2,10,18,.98)
-    );
-    box-shadow:0 10px 35px rgba(0,0,0,.35);
-    padding:18px;
-    margin-bottom:16px;
+border:1px solid rgba(74,190,255,.65);
+border-radius:18px;
+background:
+linear-gradient(
+180deg,
+rgba(8,30,48,.96),
+rgba(2,10,18,.98)
+);
+box-shadow:0 10px 35px rgba(0,0,0,.35);
+padding:18px;
+margin-bottom:16px;
 }
 
 .card h2{
-    font-size:17px;
-    margin:0 0 12px;
+font-size:17px;
+margin:0 0 12px;
 }
 
 /* GRID */
 .grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
 }
 
 .stat{
-    min-width:0;
+min-width:0;
 }
 
 /* NUMBERS */
 .big{
-    font-size:27px;
-    font-weight:900;
-    margin-top:4px;
+font-size:28px;
+font-weight:900;
+margin-top:4px;
 }
 
 .muted{
-    color:#a8c4d7;
-    font-size:13px;
-    margin-top:5px;
+color:#a8c4d7;
+font-size:13px;
+margin-top:5px;
 }
 
 /* ONLINE */
 .online{
-    display:flex;
-    align-items:center;
-    gap:7px;
-    font-size:16px;
-    font-weight:700;
+display:flex;
+align-items:center;
+gap:7px;
+font-size:16px;
+font-weight:700;
 }
 
 .dot{
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    background:#25ff72;
-    box-shadow:0 0 10px #25ff72;
-    animation:pulse 1.2s infinite;
+width:10px;
+height:10px;
+border-radius:50%;
+background:#25ff72;
+box-shadow:0 0 10px #25ff72;
+animation:pulse 1.2s infinite;
 }
 
 @keyframes pulse{
-    0%,100%{
-        opacity:1;
-        transform:scale(1);
-    }
-    50%{
-        opacity:.5;
-        transform:scale(.75);
-    }
+0%,100%{
+opacity:1;
+transform:scale(1);
+}
+50%{
+opacity:.5;
+transform:scale(.75);
+}
 }
 
 /* LIVE */
 .live{
-    display:inline-block;
-    padding:5px 10px;
-    border-radius:20px;
-    background:#ff1744;
-    font-size:12px;
-    font-weight:900;
-    margin-bottom:10px;
-    box-shadow:0 0 12px rgba(255,23,68,.5);
+display:inline-block;
+padding:5px 10px;
+border-radius:20px;
+background:#ff1744;
+font-size:12px;
+font-weight:900;
+margin-bottom:10px;
+box-shadow:0 0 12px rgba(255,23,68,.5);
 }
 
-/* LIST */
+/* WITHDRAW */
 .withdraw{
-    padding:13px 0;
-    border-bottom:1px solid rgba(255,255,255,.08);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 0;
+border-bottom:1px solid rgba(255,255,255,.08);
+font-size:14px;
 }
 
 .withdraw:last-child{
-    border-bottom:none;
+border-bottom:none;
 }
 
-.withdraw-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:8px;
-}
-
-.member-info{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    min-width:0;
-}
-
-.bank-icon{
-    width:28px;
-    height:28px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:#fff;
-    color:#087cff;
-    font-weight:900;
-    flex-shrink:0;
-}
-
-.withdraw-phone{
-    font-size:13px;
-    font-weight:700;
-}
-
-.withdraw-amount{
-    color:#35ff8a;
-    font-size:15px;
-    font-weight:900;
-    white-space:nowrap;
-}
-
-.withdraw-time{
-    margin-top:5px;
-    color:#7899ad;
-    font-size:11px;
-}
-
-.withdraw-status{
-    margin-top:6px;
-    font-size:12px;
-    font-weight:800;
-}
-
-.status-success{
-    color:#35ff8a;
+.withdraw b{
+color:#35ff8a;
+font-size:16px;
 }
 
 /* BUTTON */
 .btn{
-    display:block;
-    width:100%;
-    padding:15px;
-    margin-top:12px;
-    border-radius:14px;
-    text-align:center;
-    text-decoration:none;
-    font-size:17px;
-    font-weight:900;
+display:block;
+width:100%;
+padding:15px;
+margin-top:12px;
+border-radius:14px;
+text-align:center;
+text-decoration:none;
+font-size:17px;
+font-weight:900;
+transition:.2s;
+}
+
+.btn:active{
+transform:scale(.97);
 }
 
 .login{
-    color:#fff;
-    background:linear-gradient(90deg,#008cff,#00b7ff);
-    box-shadow:0 8px 25px rgba(0,150,255,.25);
+color:#fff;
+
+background:linear-gradient(90deg,#008cff,#00b7ff);
+box-shadow:0 8px 25px rgba(0,150,255,.25);
 }
 
 .admin{
-    color:#fff;
-    background:linear-gradient(90deg,#00a83b,#20d957);
-    border:1px solid #35ff70;
-    box-shadow:0 8px 25px rgba(0,200,70,.25);
+color:#fff;
+
+background:linear-gradient(90deg,#00a83b,#20d957);
+border:1px solid #35ff70;
+box-shadow:0 8px 25px rgba(0,200,70,.25);
+}
+
+.withdraw{
+padding:13px 0;
+border-bottom:1px solid rgba(255,255,255,.08);
+animation:slideIn .35s ease;
+}
+
+.withdraw-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:8px;
+}
+
+.member-info{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.bank-icon{
+width:28px;
+height:28px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:#fff;
+color:#087cff;
+font-weight:900;
+flex-shrink:0;
+}
+
+.withdraw-phone{
+font-size:13px;
+font-weight:700;
+}
+
+.withdraw-amount{
+color:#35ff8a;
+font-size:15px;
+font-weight:900;
+}
+
+.withdraw-time{
+margin-top:5px;
+color:#7899ad;
+font-size:11px;
+}
+
+.withdraw-status{
+margin-top:6px;
+font-size:12px;
+font-weight:800;
+}
+
+.status-wait{
+color:#ffd43b;
+}
+
+.status-success{
+color:#35ff8a;
+}
+
+@keyframes slideIn{
+from{
+opacity:0;
+transform:translateY(-12px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 /* FOOTER */
 .footer{
-    text-align:center;
-    color:#7893a5;
-    font-size:12px;
-    margin-top:22px;
-    line-height:1.8;
+text-align:center;
+color:#7893a5;
+font-size:12px;
+margin-top:22px;
 }
-</style></head><body><main class="page"><!-- LOGO --><div class="logo">
-    <img src="11_0.png" alt="BLUE4YOU">
-</div><div class="logo-text">
-    BLUE4YOU สะดวก • รวดเร็ว • พร้อมให้บริการ
-</div><!-- BANNERS --><div class="banner-item">
-    <img src="logo.jpg.jpg" alt="BLUE4YOU">
-</div><div class="banner-item">
-    <img src="logo.jpg (2).jpg" alt="BLUE4YOU">
-</div><div class="banner-grid"><div class="banner-item">
-    <img src="256021_0.jpg" alt="BLUE4YOU">
+</style></head><body><main class="page"><div class="logo">
+<img src="11_0.png" alt="BLUE4YOU">
+
+</div>   <div class="logo-text">  
+    BLUE4YOU สะดวก • รวดเร็ว • พร้อมให้บริการ  
+</div>     <div class="banner-item">  
+        <img src="logo.jpg.jpg" alt="BLUE4YOU">  
+    </div>  <div class="banner-item">  
+    <img src="logo.jpg (2).jpg" alt="BLUE4YOU">  
+</div>  
+
+<div class="banner-grid">  
+
+<div class="banner-item">  
+    <img src="256021_0.jpg" alt="BLUE4YOU">  
+</div>  
+
+<div class="banner-item">  
+    <img src="256022_0.jpg" alt="BLUE4YOU">  
+</div>  
+
+<div class="banner-item">  
+    <img src="42go_9.jpg" alt="BLUE4YOU">  
+</div>  
+
+<div class="banner-item">  
+    <img src="aff12_9.jpg" alt="BLUE4YOU">  
 </div>
 
-<div class="banner-item">
-    <img src="256022_0.jpg" alt="BLUE4YOU">
-</div>
+</div>  <div class="subtitle">  
+    บริการครบ จบในที่เดียว  
+</div>  <div class="badge">  
+    ● ระบบออนไลน์ตลอด 24 ชั่วโมง  
+</div>  <!-- USERS -->  <section class="card">  <div class="grid">  
 
-<div class="banner-item">
-    <img src="42go_9.jpg" alt="BLUE4YOU">
-</div>
+    <div class="stat">  
+        <div class="muted">  
+            จำนวนผู้ใช้งาน  
+        </div>  
 
-<div class="banner-item">
-    <img src="aff12_9.jpg" alt="BLUE4YOU">
-</div>
+        <div class="big" id="users">  
+            1,925,919  
+        </div>  
+    </div>  
 
-</div><div class="subtitle">
-    บริการครบ จบในที่เดียว
-</div><div class="badge">
-    ● ระบบออนไลน์ตลอด 24 ชั่วโมง
-</div><!-- USERS --><section class="card"><div class="grid">
+    <div class="stat">  
 
-    <div class="stat">
+        <div class="online">  
+            <span class="dot"></span>  
+            ผู้ใช้ออนไลน์  
+        </div>  
 
-        <div class="muted">
-            จำนวนผู้ใช้งาน
-        </div>
+        <div class="muted">  
+            กำลังใช้งานอยู่ตอนนี้  
+        </div>  
 
-        <div class="big" id="users">
-            2,480
-        </div>
-
-        <div class="muted">
-            ผู้ใช้งานในระบบ
-        </div>
-
-    </div>
-
-
-    <div class="stat">
-
-        <div class="online">
-            <span class="dot"></span>
-            <span id="online">186</span>
-        </div>
-
-        <div class="muted">
-            ผู้ใช้ออนไลน์
-        </div>
-
-    </div>
-
-</div>
-
-</section><!-- BONUS --><section class="card"><span class="live">
-    LIVE
-</span>
-
-<h2>
-    ยอดโบนัสสะสม
-</h2>
-
-<div class="big" id="bonus">
-    128,450.00 ฿
-</div>
-
-<div class="muted">
-    ยอดสะสมประจำระบบ
-</div>
-
-</section><!-- RECENT --><section class="card"><h2>
-    รายการล่าสุด
-</h2>
-
-<div class="muted">
-    รายการตัวอย่าง • อัปเดตล่าสุด
-</div>
-
-<div id="withdrawals">
-
-    <div class="withdraw">
-
-        <div class="withdraw-top">
-
-            <div class="member-info">
-
-                <span class="bank-icon">
-                    ฿
-                </span>
-
-                <span class="withdraw-phone">
-                    สมาชิก 08X-XXX-4821
-                </span>
-
-            </div>
-
-            <span class="withdraw-amount">
-                1,250 ฿
-            </span>
-
-        </div>
-
-        <div class="withdraw-time">
-            วันนี้ • 10:42 น.
-        </div>
-
-        <div class="withdraw-status status-success">
-            ✓ รายการตัวอย่าง
-        </div>
-
-    </div>
-
-
-    <div class="withdraw">
-
-        <div class="withdraw-top">
-
-            <div class="member-info">
-
-                <span class="bank-icon">
-                    ฿
-                </span>
-
-                <span class="withdraw-phone">
-                    สมาชิก 09X-XXX-7315
-                </span>
-
-            </div>
-
-            <span class="withdraw-amount">
-                980 ฿
-            </span>
-
-        </div>
-
-        <div class="withdraw-time">
-            วันนี้ • 10:18 น.
-        </div>
-
-        <div class="withdraw-status status-success">
-            ✓ รายการตัวอย่าง
-        </div>
-
-    </div>
-
-
-    <div class="withdraw">
-
-        <div class="withdraw-top">
-
-            <div class="member-info">
-
-                <span class="bank-icon">
-                    ฿
-                </span>
-
-                <span class="withdraw-phone">
-                    สมาชิก 06X-XXX-2648
-                </span>
-
-            </div>
-
-            <span class="withdraw-amount">
-                2,450 ฿
-            </span>
-
-        </div>
-
-        <div class="withdraw-time">
-            วันนี้ • 09:56 น.
-        </div>
-
-        <div class="withdraw-status status-success">
-            ✓ รายการตัวอย่าง
-        </div>
-
-    </div>
+    </div>  
 
 </div>
 
-</section><!-- BUTTONS --><a
+</section>  <!-- BONUS -->  <section class="card">  <span class="live">  
+    LIVE  
+</span>  
+
+<h2>  
+    ยอดโบนัสสะสม  
+</h2>  
+
+<div class="big" id="bonus">  
+    77,412,054.00 ฿  
+</div>  
+
+<div class="muted">  
+    อัปเดตอัตโนมัติ  
+</div>
+
+</section>  <!-- WITHDRAW -->  <section class="card">  <h2>  
+    รายการล่าสุด  
+</h2>  
+
+<div class="muted">  
+    AUTO SYSTEM • LIVE  
+</div>  
+
+<div id="withdrawals">  
+</div>
+
+</section>  <!-- BUTTONS -->  <a
 class="btn login"
 href="https://blue4you.zzttyy.com/customer/regi/ka"
 target="_blank"
 rel="noopener"
 
-«»
+> 
 
 สมัครสมาชิก
 
-</a><a
+</a>  <a
 class="btn admin"
 href="https://lin.ee/5WrfDvQ"
-target="_blank"
+target="_green"
 rel="noopener"
 
-«»
+> 
 
 ติดต่อเรา
 
-</a><div class="footer">
-    BLUE4YOU<br>
-    รองรับการใช้งานทุกระบบ
-</div></main></body>
-</html>
+</a>  <div class="footer">  
+    รองรับการใช้งานทุกระบบ  
+</div>  </main><script>  
+(function(){  let bonus = 77412054;  
+let users = 1925919;  
+
+function money(n){  
+
+    return n.toLocaleString('th-TH',{  
+        minimumFractionDigits:2,  
+        maximumFractionDigits:2  
+    }) + ' ฿';  
+
+}  
+
+/* อัปเดตยอดและจำนวนผู้ใช้งาน */  
+
+setInterval(function(){  
+
+    bonus += Math.random() * 4;  
+
+    document.getElementById("bonus").textContent =  
+        money(bonus);  
+
+    users += Math.random() > 0.5 ? 1 : -1;  
+
+    if(users < 1925000){  
+        users = 1925000;  
+    }  
+
+    document.getElementById("users").textContent =  
+        users.toLocaleString("th-TH");  
+
+},1000);  
+
+
+/* อัปเดตรายการถอน */  
+
+function updateWithdraw(){  
+
+    const list = document.querySelectorAll(  
+        "#withdrawals .withdraw b"  
+    );  
+
+    list.forEach(function(item){  
+
+        const amount = Math.floor(  
+            100 + Math.random() * 4900  
+        );  
+
+        item.textContent =  
+            "+" +  
+            amount.toLocaleString("th-TH") +  
+            " ฿";  
+
+    });  
+
+}  
+
+updateWithdraw();  
+
+setInterval(updateWithdraw,3000);
+
+function randomMember(){
+
+const prefixes = [  
+    "08X-XXX-",  
+    "09X-XXX-",  
+    "06X-XXX-"  
+];  
+
+const prefix =  
+    prefixes[Math.floor(Math.random() * prefixes.length)];  
+
+const number =  
+    Math.floor(1000 + Math.random() * 9000);  
+
+return "สมาชิก " + prefix + number;
+
+}
+
+function addDemoTransaction(){
+
+const box =  
+    document.getElementById("withdrawals");  
+
+const amount =  
+    Math.floor(100 + Math.random() * 4900);  
+
+const now = new Date();  
+
+const time =  
+    now.toLocaleDateString("th-TH") +  
+    " • " +  
+    now.toLocaleTimeString("th-TH",{  
+        hour:"2-digit",  
+        minute:"2-digit"  
+    }) +  
+    " น.";  
+
+const item =  
+    document.createElement("div");  
+
+item.className = "withdraw";  
+
+item.innerHTML = `  
+    <div class="withdraw-top">  
+
+        <div class="member-info">  
+
+            <span class="bank-icon">  
+                ฿  
+            </span>  
+
+            <span class="withdraw-phone">  
+                ${randomMember()}  
+            </span>  
+
+        </div>  
+
+        <span class="withdraw
