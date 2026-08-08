@@ -310,6 +310,24 @@ background:linear-gradient(90deg,#00a83b,#20d957);
     font-size:12px;
     margin-top:22px;
 }
+    /* โลโก้กระพริบนีออน */
+.logo img {
+    animation: logoFlash 1.8s ease-in-out infinite;
+}
+
+@keyframes logoFlash {
+    0%, 100% {
+        filter: drop-shadow(0 0 8px rgba(0,180,255,.5));
+        transform: scale(1);
+    }
+
+    50% {
+        filter:
+            drop-shadow(0 0 18px #00cfff)
+            drop-shadow(0 0 35px #008cff);
+        transform: scale(1.03);
+    }
+}
     /* =====================================================
    BLUE NEON PARTICLE / LIGHT EFFECT
    ===================================================== */
