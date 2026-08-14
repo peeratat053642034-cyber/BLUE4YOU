@@ -556,25 +556,35 @@ body::after {
 
     <div class="grid">
 
+        <!-- จำนวนสมาชิก -->
         <div class="stat">
             <div class="muted">
-                จำนวนผู้ใช้งาน
+                จำนวนสมาชิก
             </div>
 
             <div class="big" id="users">
                 1,925,919
             </div>
+
+            <div class="muted">
+                สมาชิกทั้งหมด
+            </div>
         </div>
 
+        <!-- กำลังออนไลน์ -->
         <div class="stat">
 
             <div class="online">
                 <span class="dot"></span>
-                ผู้ใช้ออนไลน์
+                กำลังออนไลน์
+            </div>
+
+            <div class="big online-number" id="onlineUsers">
+                22,847
             </div>
 
             <div class="muted">
-                กำลังใช้งานอยู่ตอนนี้
+                กำลังเข้าใช้งานตอนนี้
             </div>
 
         </div>
@@ -649,7 +659,8 @@ body::after {
 
     let bonus = 77412054;
     let users = 1925919;
-
+    let onlineUsers = 22847;
+    
     function money(n){
 
         return n.toLocaleString('th-TH',{
@@ -668,15 +679,58 @@ body::after {
         document.getElementById("bonus").textContent =
             money(bonus);
 
-        users += Math.random() > 0.5 ? 1 : -1;
+       users += Math.random() > 0.5 ? 1 : -1;
 
-        if(users < 1925000){
-            users = 1925000;
-        }
+if(users < 1925000){
+    users = 1925000;
+}
 
-        document.getElementById("users").textContent =
-            users.toLocaleString("th-TH");
+document.getElementById("users").textContent =
+    users.toLocaleString("th-TH");
 
+/* ===== กำลังออนไลน์ตอนนี้ ===== */
+
+let onlineChange;
+
+/* สุ่มรูปแบบการเปลี่ยนแปลง */
+const random = Math.random();
+
+if(random < 0.35){
+
+    // คนเข้าเพิ่ม
+    onlineChange = Math.floor(Math.random() * 50) + 10;
+
+}else if(random < 0.70){
+
+    // คนออก
+    onlineChange = -(Math.floor(Math.random() * 40) + 5);
+
+}else{
+
+    // ขยับเล็กน้อย
+    onlineChange = Math.floor(Math.random() * 21) - 10;
+
+}
+
+onlineUsers += onlineChange;
+
+
+/* จำกัดช่วง 20,000 - 30,000 */
+
+if(onlineUsers < 20000){
+    onlineUsers = 20000;
+}
+
+if(onlineUsers > 30000){
+    onlineUsers = 30000;
+}
+
+
+/* แสดงผล */
+
+document.getElementById("onlineUsers").textContent =
+    onlineUsers.toLocaleString("th-TH");
+        
     },1000);
 
 
