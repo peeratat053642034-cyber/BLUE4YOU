@@ -492,23 +492,55 @@ function closeReviewForm(){
 }
 
 document.querySelectorAll("#ratingSelect button").forEach(function(button){
-    ...
+    button.addEventListener("click",function(){
+        selectedRating = Number(this.dataset.rating);
+
+        document.querySelectorAll("#ratingSelect button").forEach(function(btn){
+            btn.classList.toggle(
+                "active",
+                Number(btn.dataset.rating) <= selectedRating
+            );
+        });
+    });
 });
 
 function submitReview(){
-    ...
-}
 
- const name=document.getElementById("reviewName").value.trim(), text=document.getElementById("reviewText").value.trim(), msg=document.getElementById("reviewFormMessage");
- if(!selectedRating){msg.textContent="กรุณาเลือกคะแนนก่อนครับ";return}
- if(!name){msg.textContent="กรุณาใส่ชื่อที่แสดงครับ";return}
- if(!text){msg.textContent="กรุณาใส่ข้อความรีวิวครับ";return}
- msg.textContent="ส่งความคิดเห็นเรียบร้อยแล้ว";
- document.getElementById("reviewName").value="";document.getElementById("reviewText").value="";selectedRating=0;
- document.querySelectorAll("#ratingSelect button").forEach(function(btn){btn.classList.remove("active")});
- setTimeout(closeReviewForm,900);
+    const name = document.getElementById("reviewName").value.trim();
+    const text = document.getElementById("reviewText").value.trim();
+    const msg = document.getElementById("reviewFormMessage");
+
+    if(!selectedRating){
+        msg.textContent = "กรุณาเลือกคะแนนก่อนครับ";
+        return;
+    }
+
+    if(!name){
+        msg.textContent = "กรุณาใส่ชื่อที่แสดงครับ";
+        return;
+    }
+
+    if(!text){
+        msg.textContent = "กรุณาใส่ข้อความรีวิวครับ";
+        return;
+    }
+
+    msg.textContent = "ส่งความคิดเห็นเรียบร้อยแล้ว";
+
+    document.getElementById("reviewName").value = "";
+    document.getElementById("reviewText").value = "";
+
+    selectedRating = 0;
+
+    document.querySelectorAll("#ratingSelect button").forEach(function(btn){
+        btn.classList.remove("active");
+    });
+
+    setTimeout(closeReviewForm,900);
 }
-document.getElementById("reviewModal").addEventListener("click",function(e){if(e.target===this)closeReviewForm()});
+ document.getElementById("reviewModal").addEventListener("click",function(e){
+    if(e.target===this)closeReviewForm()
+});
 
 /* เอฟเฟกต์อนุภาค */
 const canvas=document.getElementById("neonGameEffect"),ctx=canvas.getContext("2d");
