@@ -477,12 +477,28 @@ while(box.children.length>5){
 for(let i=0;i<3;i++)addWithdrawal();
 setInterval(addWithdrawal,5000);
 
+let selectedRating = 0;
 
-let selectedRating=0;
-function openReviewForm(){document.getElementById("reviewModal").classList.add("show");document.getElementById("reviewModal").setAttribute("aria-hidden","false")}
-function closeReviewForm(){document.getElementById("reviewModal").classList.remove("show");document.getElementById("reviewModal").setAttribute("aria-hidden","true")}
-document.querySelectorAll("#ratingSelect button").forEach(function(button){button.addEventListener("click",function(){selectedRating=Number(this.dataset.rating);document.querySelectorAll("#ratingSelect button").forEach(function(btn){btn.classList.toggle("active",Number(btn.dataset.rating)<=selectedRating)})})});
+function openReviewForm(){
+    const modal = document.getElementById("reviewModal");
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden","false");
+}
+
+function closeReviewForm(){
+    const modal = document.getElementById("reviewModal");
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden","true");
+}
+
+document.querySelectorAll("#ratingSelect button").forEach(function(button){
+    ...
+});
+
 function submitReview(){
+    ...
+}
+
  const name=document.getElementById("reviewName").value.trim(), text=document.getElementById("reviewText").value.trim(), msg=document.getElementById("reviewFormMessage");
  if(!selectedRating){msg.textContent="กรุณาเลือกคะแนนก่อนครับ";return}
  if(!name){msg.textContent="กรุณาใส่ชื่อที่แสดงครับ";return}
