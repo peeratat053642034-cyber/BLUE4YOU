@@ -211,18 +211,13 @@ setInterval(function(){
 },1000);
 
 /* ชื่อสมมติ + รีวิวตัวอย่าง 50 ข้อ */
-const reviewNames=[
- "สมาชิก A01","สมาชิก B02","สมาชิก C03","สมาชิก D04","สมาชิก E05",
- "สมาชิก F06","สมาชิก G07","สมาชิก H08","สมาชิก J09","สมาชิก K10",
- "สมาชิก L11","สมาชิก M12","สมาชิก N13","สมาชิก P14","สมาชิก Q15",
- "สมาชิก R16","สมาชิก S17","สมาชิก T18","สมาชิก U19","สมาชิก V20",
- "สมาชิก W21","สมาชิก X22","สมาชิก Y23","สมาชิก Z24","สมาชิก AA25",
- "สมาชิก AB26","สมาชิก AC27","สมาชิก AD28","สมาชิก AE29","สมาชิก AF30",
- "สมาชิก AG31","สมาชิก AH32","สมาชิก AJ33","สมาชิก AK34","สมาชิก AL35",
- "สมาชิก AM36","สมาชิก AN37","สมาชิก AP38","สมาชิก AQ39","สมาชิก AR40",
- "สมาชิก AS41","สมาชิก AT42","สมาชิก AU43","สมาชิก AV44","สมาชิก AW45",
- "สมาชิก AX46","สมาชิก AY47","สมาชิก AZ48","สมาชิก BA49","สมาชิก BB50"
-];
+function randomMember(){
+    const prefix = ["06","08","09"][Math.floor(Math.random()*3)];
+    const number = Math.floor(10000000 + Math.random()*90000000);
+    return "สมาชิก " + prefix + number;
+}
+
+const reviewNames = Array.from({length:50}, () => randomMember());
 
 const reviews=[
  "เล่นง่าย เมนูไม่ซับซ้อนครับ","หน้าเว็บใช้งานสะดวกครับ","ระบบดูเข้าใจง่ายครับ",
@@ -259,7 +254,7 @@ function showReview(){
   <div class="review-item">
    <div class="review-avatar">★</div>
    <div class="review-content">
-    <div class="review-name">${reviewNames[reviewIndex]}</div>
+    <div class="review-name">${randomMember()}</div>
     <div class="review-stars">★★★★★ <span>${rating.toFixed(1)}</span></div>
     <div class="review-message">${reviews[reviewIndex]}</div>
     <div class="review-time">เมื่อสักครู่นี้</div>
@@ -276,10 +271,7 @@ setInterval(showReview,4000);
 
 
 /* รายการถอนตัวอย่าง */
-const withdrawalNames=[
- "สมาชิก A01","สมาชิก B02","สมาชิก C03","สมาชิก D04","สมาชิก E05",
- "สมาชิก F06","สมาชิก G07","สมาชิก H08"
-];
+const withdrawalNames = Array.from({length:20}, () => randomMember());
 
 function addWithdrawal(){
  const box=document.getElementById("withdrawals");
@@ -296,7 +288,7 @@ function addWithdrawal(){
    <div class="withdraw-member">
     <span class="bank-icon">฿</span>
     <span class="withdraw-name">
-     ${withdrawalNames[Math.floor(Math.random()*withdrawalNames.length)]}
+     ${randomMember()}
     </span>
    </div>
    <span class="withdraw-amount">
