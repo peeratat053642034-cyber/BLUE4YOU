@@ -74,9 +74,20 @@ body{display:flex;justify-content:center;overflow-x:hidden}
 .withdraw-name{font-size:13px;font-weight:700}
 .withdraw-amount{color:#35ff8a;font-size:15px;font-weight:900;white-space:nowrap}
 .withdraw-time{margin-top:5px;color:#7899ad;font-size:11px}
-.withdraw-status{margin-top:5px;font-size:11px;font-weight:800;color:#35ff8a}
+.withdraw-status{
+    margin-top:6px;
+    font-size:12px;
+    font-weight:800;
+}
+ 
+ .status-wait{
+  color:#ffd43b;
+}
 
-
+.status-success{
+  color:#35ff8a;
+}
+ 
 .review-button{width:100%;margin-top:14px;padding:11px 14px;border-radius:12px;border:1px solid rgba(74,190,255,.55);background:rgba(0,140,255,.10);color:#8fddff;font-size:14px;font-weight:800;cursor:pointer}
 .review-button:active{transform:scale(.98)}
 .review-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,5,12,.78);backdrop-filter:blur(5px);z-index:50}
@@ -340,12 +351,26 @@ function addWithdrawal(){
    </span>
   </div>
   <div class="withdraw-time">${time} น.</div>
-  <div class="withdraw-status">ทำรายการสำเร็จ</div>
- `;
+  <div class="withdraw-status status-wait">
+  รอทำรายการ
+</div>
+`;
 
- box.prepend(item);
+box.prepend(item);
 
- while(box.children.length>5){
+setTimeout(function(){
+
+  const status = item.querySelector(".withdraw-status");
+
+  if(status){
+    status.textContent = "สำเร็จ";
+    status.classList.remove("status-wait");
+    status.classList.add("status-success");
+  }
+
+},3000);
+
+while(box.children.length>5){
   box.removeChild(box.lastElementChild);
  }
 }
