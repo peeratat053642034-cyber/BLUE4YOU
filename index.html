@@ -477,71 +477,104 @@ while(box.children.length>5){
 for(let i=0;i<3;i++)addWithdrawal();
 setInterval(addWithdrawal,5000);
 
+<script>
 let selectedRating = 0;
 
-function openReviewForm(){
+window.openReviewForm = function () {
     const modal = document.getElementById("reviewModal");
+
+    if (!modal) return;
+
     modal.classList.add("show");
-    modal.setAttribute("aria-hidden","false");
-}
+    modal.setAttribute("aria-hidden", "false");
+};
 
-function closeReviewForm(){
+window.closeReviewForm = function () {
     const modal = document.getElementById("reviewModal");
-    modal.classList.remove("show");
-    modal.setAttribute("aria-hidden","true");
-}
 
-document.querySelectorAll("#ratingSelect button").forEach(function(button){
-    button.addEventListener("click",function(){
+    if (!modal) return;
+
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+};
+
+document.querySelectorAll("#ratingSelect button").forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
         selectedRating = Number(this.dataset.rating);
 
-        document.querySelectorAll("#ratingSelect button").forEach(function(btn){
+        document.querySelectorAll("#ratingSelect button").forEach(function (btn) {
+
             btn.classList.toggle(
                 "active",
                 Number(btn.dataset.rating) <= selectedRating
             );
+
         });
+
     });
+
 });
 
-function submitReview(){
+window.submitReview = function () {
 
-    const name = document.getElementById("reviewName").value.trim();
-    const text = document.getElementById("reviewText").value.trim();
+    const nameElement = document.getElementById("reviewName");
+    const textElement = document.getElementById("reviewText");
     const msg = document.getElementById("reviewFormMessage");
 
-    if(!selectedRating){
+    if (!nameElement || !textElement || !msg) return;
+
+    const name = nameElement.value.trim();
+    const text = textElement.value.trim();
+
+    if (!selectedRating) {
         msg.textContent = "กรุณาเลือกคะแนนก่อนครับ";
         return;
     }
 
-    if(!name){
+    if (!name) {
         msg.textContent = "กรุณาใส่ชื่อที่แสดงครับ";
         return;
     }
 
-    if(!text){
+    if (!text) {
         msg.textContent = "กรุณาใส่ข้อความรีวิวครับ";
         return;
     }
 
     msg.textContent = "ส่งความคิดเห็นเรียบร้อยแล้ว";
 
-    document.getElementById("reviewName").value = "";
-    document.getElementById("reviewText").value = "";
+    nameElement.value = "";
+    textElement.value = "";
 
     selectedRating = 0;
 
-    document.querySelectorAll("#ratingSelect button").forEach(function(btn){
+    document.querySelectorAll("#ratingSelect button").forEach(function (btn) {
         btn.classList.remove("active");
     });
 
-    setTimeout(closeReviewForm,900);
-}
- document.getElementById("reviewModal").addEventListener("click",function(e){
-    if(e.target===this)closeReviewForm()
-});
+    setTimeout(function () {
+        window.closeReviewForm();
+        msg.textContent = "";
+    }, 900);
+};
 
+const reviewModal = document.getElementById("reviewModal");
+
+if (reviewModal) {
+
+    reviewModal.addEventListener("click", function (e) {
+
+        if (e.target === reviewModal) {
+            window.closeReviewForm();
+        }
+
+    });
+
+}
+</script>
+ 
 /* เอฟเฟกต์อนุภาค */
 const canvas=document.getElementById("neonGameEffect"),ctx=canvas.getContext("2d");
 let W,H,dpr,particles=[],flashes=[];
