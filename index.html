@@ -18,9 +18,53 @@ body{display:flex;justify-content:center;overflow-x:hidden}
 .page>*{position:relative;z-index:2}
 
 .logo{text-align:center;margin:12px 0 10px}
-.logo img{display:block;width:220px;max-width:90%;height:auto;margin:0 auto;filter:drop-shadow(0 0 12px rgba(0,180,255,.65));animation:logoFlash 1.8s ease-in-out infinite}
-.logo-text{text-align:center;color:#fff;font-size:16px;font-weight:700;margin:5px 0 18px;text-shadow:0 0 10px rgba(0,180,255,.6)}
 
+.logo img{
+  display:block;
+  width:220px;
+  max-width:90%;
+  height:auto;
+  margin:0 auto;
+  animation:logoFlash 1.5s ease-in-out infinite;
+}
+
+@keyframes logoFlash{
+  0%,100%{
+    opacity:1;
+    transform:scale(1);
+    filter:
+      drop-shadow(0 0 8px rgba(0,180,255,.5))
+      drop-shadow(0 0 15px rgba(0,180,255,.4));
+  }
+
+  45%{
+    opacity:.65;
+    transform:scale(1.01);
+    filter:
+      drop-shadow(0 0 15px rgba(0,210,255,.9))
+      drop-shadow(0 0 30px rgba(0,180,255,.8));
+  }
+
+  50%{
+    opacity:1;
+    transform:scale(1.04);
+    filter:
+      drop-shadow(0 0 20px rgba(0,230,255,1))
+      drop-shadow(0 0 45px rgba(0,180,255,1))
+      drop-shadow(0 0 70px rgba(0,120,255,.8));
+  }
+
+  55%{
+    opacity:.7;
+    transform:scale(1.01);
+    filter:
+      drop-shadow(0 0 12px rgba(0,210,255,.8))
+      drop-shadow(0 0 25px rgba(0,180,255,.6));
+  }
+}
+
+.logo-text{text-align:center;color:#fff;font-size:16px;font-weight:700;margin:5px 0 18px;text-shadow:0 0 10px rgba(0,180,255,.6)}
+ 
 .social-stats{
     text-align:center;
     color:#b9d9ef;
