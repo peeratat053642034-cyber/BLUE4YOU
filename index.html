@@ -21,6 +21,15 @@ body{display:flex;justify-content:center;overflow-x:hidden}
 .logo img{display:block;width:220px;max-width:90%;height:auto;margin:0 auto;filter:drop-shadow(0 0 12px rgba(0,180,255,.65));animation:logoFlash 1.8s ease-in-out infinite}
 .logo-text{text-align:center;color:#fff;font-size:16px;font-weight:700;margin:5px 0 18px;text-shadow:0 0 10px rgba(0,180,255,.6)}
 
+.social-stats{
+    text-align:center;
+    color:#b9d9ef;
+    font-size:12px;
+    margin:-8px 0 16px;
+    opacity:.9;
+    transition:opacity .5s ease;
+}
+ 
 .banner-item{width:95%;margin:0 auto 18px;overflow:hidden;border-radius:18px;border:1px solid rgba(74,190,255,.55);box-shadow:0 8px 25px rgba(0,0,0,.4)}
 .banner-item img{display:block;width:100%;height:auto}
 .subtitle{text-align:center;color:#b9d9ef;font-size:15px;margin-bottom:24px}
@@ -119,6 +128,12 @@ body::after{
 <div class="logo"><img src="11_0.png" alt="BLUE4YOU"></div>
 <div class="logo-text">BLUE4YOU สะดวก • รวดเร็ว • พร้อมให้บริการ</div>
 
+<div class="social-stats">
+    👥 ผู้ติดตาม <span id="followers">2.9K+</span>
+    &nbsp;|&nbsp;
+    👀 ยอดดู <span id="views">9.6K</span> ครั้ง/เดือน
+</div>
+ 
 <div class="banner-item"><img src="logo.jpg.jpg" alt="BLUE4YOU"></div>
 <div class="banner-item"><img src="logo.jpg (2).jpg" alt="BLUE4YOU"></div>
 
@@ -192,7 +207,7 @@ body::after{
 <script>
 (function(){
 
-let bonus=77412054, users=1925919, online=1248;
+let bonus=77412054, users=1925919, online=7500;
 
 function money(n){
  return n.toLocaleString('th-TH',{minimumFractionDigits:2,maximumFractionDigits:2})+' ฿';
@@ -203,13 +218,31 @@ setInterval(function(){
  users += Math.random()>0.5 ? 1 : -1;
  online += Math.random()>0.5 ? Math.ceil(Math.random()*4) : -Math.ceil(Math.random()*3);
  if(users<1925000)users=1925000;
- if(online<1100)online=1100;
- if(online>1500)online=1500;
+ if(online<5000)online=5000;
+ if(online>10000)online=10000;
  document.getElementById("bonus").textContent=money(bonus);
  document.getElementById("users").textContent=users.toLocaleString("th-TH");
  document.getElementById("onlineUsers").textContent=online.toLocaleString("th-TH");
 },1000);
 
+// ผู้ติดตามและยอดดู
+let followers = 2900;
+let views = 9600;
+
+function updateSocialStats(){
+
+    followers += Math.floor(Math.random()*3);
+    views += Math.floor(Math.random()*8);
+
+    document.getElementById("followers").textContent =
+        (followers / 1000).toFixed(1) + "K+";
+
+    document.getElementById("views").textContent =
+        (views / 1000).toFixed(1) + "K";
+}
+
+setInterval(updateSocialStats,15000);
+ 
 /* ชื่อสมมติ + รีวิวตัวอย่าง 50 ข้อ */
 function randomMember(){ 
 
