@@ -211,13 +211,24 @@ setInterval(function(){
 },1000);
 
 /* ชื่อสมมติ + รีวิวตัวอย่าง 50 ข้อ */
-function randomMember(){
-    const prefix = ["06","08","09"][Math.floor(Math.random()*3)];
-    const number = Math.floor(10000000 + Math.random()*90000000);
-    return "สมาชิก " + prefix + number;
+function randomMember(){ 
+
+    const prefixes = [ 
+        "08X-XXX-", 
+        "09X-XXX-", 
+        "06X-XXX-" 
+    ]; 
+
+    const prefix = 
+        prefixes[Math.floor(Math.random() * prefixes.length)]; 
+
+    const number = 
+        Math.floor(1000 + Math.random() * 9000); 
+
+    return "สมาชิก " + prefix + number; 
 }
 
-const reviewNames = Array.from({length:50}, () => randomMember());
+const reviewNames=Array.from({length:50},()=>randomMember());
 
 const reviews=[
  "เล่นง่าย เมนูไม่ซับซ้อนครับ","หน้าเว็บใช้งานสะดวกครับ","ระบบดูเข้าใจง่ายครับ",
@@ -271,7 +282,7 @@ setInterval(showReview,4000);
 
 
 /* รายการถอนตัวอย่าง */
-const withdrawalNames = Array.from({length:20}, () => randomMember());
+const withdrawalNames=Array.from({length:20},()=>randomMember());
 
 function addWithdrawal(){
  const box=document.getElementById("withdrawals");
