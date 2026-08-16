@@ -180,7 +180,62 @@ body::after{
 <button type="button" class="review-button" onclick="openReviewForm()">★ เขียนรีวิวของคุณ</button>
 </section>
 
+<div id="reviewModal" class="review-modal" aria-hidden="true">
 
+ <div class="review-modal-box">
+
+  <button type="button"
+          class="review-close"
+          onclick="closeReviewForm()">×</button>
+
+  <h2>เขียนรีวิว</h2>
+
+  <div class="review-form-note">
+    แสดงความคิดเห็นของคุณ
+  </div>
+
+  <label class="review-label">คะแนน</label>
+
+  <div class="rating-select" id="ratingSelect">
+   <button type="button" data-rating="1">★</button>
+   <button type="button" data-rating="2">★</button>
+   <button type="button" data-rating="3">★</button>
+   <button type="button" data-rating="4">★</button>
+   <button type="button" data-rating="5">★</button>
+  </div>
+
+  <label class="review-label">ชื่อที่แสดง</label>
+
+  <input
+   id="reviewName"
+   class="review-input"
+   maxlength="30"
+   placeholder="กรอกชื่อของคุณ"
+  >
+
+  <label class="review-label">ข้อความรีวิว</label>
+
+  <textarea
+   id="reviewText"
+   class="review-textarea"
+   maxlength="160"
+   placeholder="เขียนความคิดเห็นของคุณ..."
+  ></textarea>
+
+  <button
+   type="button"
+   class="review-submit"
+   onclick="submitReview()">
+   ส่งรีวิว
+  </button>
+
+  <div id="reviewFormMessage"
+       class="review-form-message"></div>
+
+ </div>
+
+</div>
+ 
 <section class="card">
  <span class="live">LIVE</span>
  <h2>รายการถอนล่าสุด</h2>
